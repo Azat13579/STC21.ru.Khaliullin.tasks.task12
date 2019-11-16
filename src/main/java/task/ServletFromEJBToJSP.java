@@ -2,8 +2,6 @@ package task;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,15 +19,13 @@ public class ServletFromEJBToJSP extends HttpServlet {
         try {
             context = new InitialContext();
             UserDirectoryEJB mySourceOfProblemsEJB =
-                    (UserDirectoryEJB)context.lookup("java:module/UserDirectoryEJB");
+                    (UserDirectoryEJB) context.lookup("java:module/UserDirectoryEJB");
             String s = mySourceOfProblemsEJB.getString();
-              req.setAttribute("name", s);
+            req.setAttribute("directory", s);
 
-        req.getRequestDispatcher("MyJSP.jsp").forward(req, resp);
+            req.getRequestDispatcher("MyJSP.jsp").forward(req, resp);
         } catch (NamingException e) {
             e.printStackTrace();
         }
-
-
     }
 }
