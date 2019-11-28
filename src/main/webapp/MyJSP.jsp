@@ -4,6 +4,7 @@
     <title>UserDirectory</title>
 </head>
 <body>
+<h2>Hello World New MyJSP!</h2>
 ${directory}
 </body>
 </html>

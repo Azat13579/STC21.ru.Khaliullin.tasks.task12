@@ -7,8 +7,7 @@ import java.io.File;
 public class UserDirectoryEJB {
     public String getString() {
         String s88 = File.separator;
-        File dir = new File("D:" + s88 + "Обучение" + s88 + "workinstudy"
-                + s88 + "test5" + s88 + "testTwoJavaEE");
+        File dir = new File(".");
         String s = "";
         String z = "---";
         return recursivePass(z, s, dir);
